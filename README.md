@@ -1,4 +1,4 @@
-#Paper Scissors Rock - Game
+### Paper Scissors Rock - Game
 
 * Design
   - Model View Controller
