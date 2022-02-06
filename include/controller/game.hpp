@@ -28,7 +28,7 @@
 namespace psr::inline v1 {
 template <class... TPlayers> struct game {
   constexpr auto operator()() const {
-    static_assert(has_inc_ids<TPlayers::id...>());
+    assert(has_inc_ids<TPlayers::id...>());
 
     using namespace boost::sml;
     using namespace events;

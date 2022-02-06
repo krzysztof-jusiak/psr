@@ -44,6 +44,7 @@ template <auto Id> struct fake_player {
   auto make_selection() -> psr::options { return player.selection; }
 
   static constexpr auto id = Id;
+  constexpr auto name() const { return player.name; }
   constexpr const auto &selection() const { return player.selection; }
   constexpr const auto &points() const { return player.points; }
   constexpr auto &points() { return player.points; }

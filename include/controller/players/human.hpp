@@ -1,5 +1,6 @@
 #pragma once
 
+#include <boost-ext/sml.hpp>
 #include <cassert>
 
 #include "controller/players/player.hpp"
@@ -27,12 +28,13 @@ public:
   }
 
   static constexpr auto id = Id;
+  constexpr auto name() const { return player_.name; }
   constexpr const auto &selection() const { return player_.selection; }
   constexpr const auto &points() const { return player_.points; }
   constexpr auto &points() { return player_.points; }
 
 private:
   iview &view_;
-  player player_{};
+  player player_{.name = boost::sml::aux::get_type_name<human<Id>>()};
 };
 } // namespace psr::inline v1
