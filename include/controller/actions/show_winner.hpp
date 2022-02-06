@@ -11,6 +11,6 @@ template <class... TPlayers>
 constexpr auto show_winner = [](const imodel &model, iview &view,
                                 const TPlayers &...players) {
   assert(model.winner().has_value());
-  view.show_winner(std::string{std::array{players.name()...}[*model.winner()]});
+  view.show_winner(std::array{players.name()...}[*model.winner()]);
 };
 } // namespace psr::inline v1
